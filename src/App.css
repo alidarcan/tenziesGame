@@ -41,7 +41,6 @@ p {
 .box,
 h2 {
   border-radius: 3.81px;
-  background-color: #FFFFFF;
   color: #2B283A;
   width: 35.84px;
   height: 35.84px;
@@ -79,4 +78,11 @@ button {
 button:hover {
   background-color: #4630d3;
   cursor: pointer;
+}
+button:focus{
+  outline: none;
+}
+
+button:active {
+  box-shadow: inset 5px 5px 10px -3px rgba(0, 0, 0, 0.7);
 }

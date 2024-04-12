@@ -1,30 +1,73 @@
-import React from 'react'
-import Dice from './components/dice'
-import './App.css'
+import React from "react";
+import Dice from "./components/dice";
+import "./App.css";
+import { nanoid } from "nanoid";
 
-function App() {
+export default function App() {
+  const [dices, setDices] = React.useState(allNewDice());
+
+  function generateNewDice() {
+    return {
+      value: Math.floor(Math.random() * 6 + 1),
+      isHeld: false,
+      id: nanoid(),
+    };
+  }
+  function rollDice() {
+    setDices((prevDices) =>
+      prevDices.map((dice) => {
+        return !dice.isHeld ? generateNewDice() : dice;
+      })
+    );
+  }
+
+  function holdDice(id) {
+    setDices((prevDices) => {
+      return prevDices.map((dice) => {
+        return dice.id === id ? { ...dice, isHeld: !dice.isHeld } : dice;
+      });
+    });
+  }
+
+  function allNewDice() {
+    let newDice = [];
+    for (let i = 0; i < 10; i++) {
+      newDice.push(generateNewDice());
+    }
+    return newDice;
+  }
+  const diceElements = dices.map((dice) => (
+    <Dice
+      value={dice.value}
+      key={dice.id}
+      isHeld={dice.isHeld}
+      holdDice={() => holdDice(dice.id)}
+    />
+  ));
 
   return (
     <main>
       <h1>Tenzies</h1>
       <div className="description">
-        <p>Roll until all dice are the same. Click each die to freeze it at its current value between rolls.</p>
+        <p>
+          Roll until all dice are the same. Click each die to freeze it at its
+          current value between rolls.
+        </p>
       </div>
       <div className="boxes">
-        <Dice value="1"/>
-        <Dice value="2"/>
-        <Dice value="3"/>
-        <Dice value="4"/>
-        <Dice value="5"/>
-        <Dice value="6"/>
-        <Dice value="1"/>
-        <Dice value="1"/>
-        <Dice value="1"/>
-        <Dice value="1"/>
+        {diceElements}
+        {/* <Dice value={1} />
+        <Dice value={2} />
+        <Dice value={3} />
+        <Dice value={4} />
+        <Dice value={5} />
+        <Dice value={6} />
+        <Dice value={1} />
+        <Dice value={1} />
+        <Dice value={1} />
+        <Dice value={1} /> */}
       </div>
-      <button>Roll</button>
+      <button onClick={rollDice}>Roll</button>
     </main>
-  )
+  );
 }
-
-export default App
