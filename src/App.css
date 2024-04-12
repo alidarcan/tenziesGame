@@ -1,6 +1,6 @@
 main {
-  width: 320px;
-  height: 320px;
+  width: 400px;
+  height: 400px;
   background-color: #F5F5F5;
   border-radius: 10px;
   padding: 35px;
@@ -23,7 +23,9 @@ p {
   letter-spacing: -0.3px;
   margin-bottom: 31px;
 }
-
+.rolls{
+  margin-bottom: 5px;
+}
 .description {
   padding: 0 10px;
 }
@@ -34,7 +36,7 @@ p {
   gap: 17px; */
   display: grid;
   grid-template: auto auto / repeat(5, 1fr);
-  gap: 20px;
+  gap: 30px;
   margin-bottom: 26px;
 }
 
