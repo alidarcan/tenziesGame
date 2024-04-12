@@ -16,10 +16,13 @@ export default function App() {
     const stopWatch = setInterval(() => {
       setTimer((prevTime) => prevTime + 1);
     }, 1000);
+    if (tenzies) {
+      clearInterval(stopWatch);
+    }
     return () => {
       clearInterval(stopWatch);
     };
-  }, []);
+  }, [tenzies]);
   // Low Score Check
   React.useEffect(() => {
     if (tenzies && rollsCount < lowScore) {
@@ -80,6 +83,7 @@ export default function App() {
     setTenzies(false);
     setDices(allNewDice());
     setRollsCount(0);
+    setTimer(0)
   }
   return (
     <main>
