@@ -1,4 +1,5 @@
 # Tenzies Game
+![FireShot Capture 073 - Tenzies Game - localhost](https://github.com/alidarcan/tenziesGame/assets/99339675/c30d9848-6152-4b2f-863b-f5c247c63693)
 
 ## Table of Contents
 
@@ -12,6 +13,8 @@ This is a game called "Tenzies".
 The playing is very simple.
 If you see same dices, then click them to hold.
 Then roll the dice, do the same process until you hold all same dices.
+
+![FireShot Capture 075 - Tenzies Game - localhost](https://github.com/alidarcan/tenziesGame/assets/99339675/cb54cc44-3832-4503-b1b7-de9c7cb787f7)
 
 ## Getting Started <a name = "getting_started"></a>
 
