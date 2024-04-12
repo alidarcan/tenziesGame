@@ -59,8 +59,7 @@ p {
 }
 
 .box:hover {
-  background-color: #8be0ad;
-  border: 1px solid #e7e7e7;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.45);
 }
 
 .dot {

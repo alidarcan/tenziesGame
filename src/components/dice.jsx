@@ -11,7 +11,6 @@ export default function Dice(props) {
 
   return (
     <div style={styles} className={diceClass} onClick={props.holdDice}>
-      {/* <h2>{props.value}</h2> */}
       {diceFace}
     </div>
   );
